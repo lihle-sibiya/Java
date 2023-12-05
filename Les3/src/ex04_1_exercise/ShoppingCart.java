@@ -21,10 +21,13 @@ public class ShoppingCart {
 
     public static void main(String[] args) {
        // String custName, itemDesc;
-        String custName = "Usanda";
-        String itemDesc = "Pizza";
-        //String message;
-        String message = custName + " " + "loves to eat" + " " + itemDesc + ".";
-        System.out.println(message);
+//        String custName = "Usanda";
+//        String itemDesc = "Pizza";
+//        //String message;
+//        String message = custName + " " + "loves to eat" + " " + itemDesc + ".";
+//        System.out.println(message);
+
+
+
     }
 }
