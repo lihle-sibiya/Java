@@ -17,6 +17,7 @@ public class League {
      */
     public static void main(String[] args) {
         
+        // Start of code that builds teams
         // Create team1      
         Player player1 = new Player();
         player1.playerName = "George Eliot";
@@ -30,7 +31,6 @@ public class League {
         team1.teamName = "The Greens";
         team1.playerArray = thePlayers;
         
-        
         // Create team2
         Team team2 = new Team();
         team2.teamName = "The Reds";
@@ -42,35 +42,45 @@ public class League {
         team2.playerArray[2] = new Player();
         team2.playerArray[2].playerName = "Rafael Sabatini";
         
-        /* Practice 6-2. a) Remove the two for loops below */
-//        for (Player thePlayer: team1.playerArray) {
-//            System.out.println(thePlayer.playerName);
-//        }  
-//        for (Player thePlayer: team2.playerArray) {
-//            System.out.println(thePlayer.playerName);
-//        } 
+        // End of code that builds teams
         
-        /* Practice 6-2. b) Create a Game here */
+    
         Game currGame = new Game();
         currGame.homeTeam = team1;
         currGame.awayTeam = team2;
-        
-        /* Practice 6-2. c ) Create a Goal object here */
         Goal goal1 = new Goal();
         goal1.thePlayer = currGame.homeTeam.playerArray[2];
         goal1.theTeam = currGame.homeTeam;
         goal1.theTime = 55;
-                
-        /* Practice 6-2. d) Put  Goal object in a Goal array and assign Goal array to goals attribute of Game object */
-        Goal[] theGoals ={goal1};
+        Goal[] theGoals = {goal1};
         currGame.goals = theGoals;
         
-        /* Practice 6-2. e) Print out the score of the Game */
-        System.out.println("Goal scored after " +
+        System.out.println("Goal scored after " + 
                 currGame.goals[0].theTime + " mins by " +
                 currGame.goals[0].thePlayer.playerName + " of " +
                 currGame.goals[0].theTeam.teamName);
         
-
+       System.out.println("* * * * * "); 
+//Practice 7.1
+        for (Player thePlayer: team2.playerArray) {
+            //System.out.println(thePlayer.playerName);
+            if (thePlayer.playerName.matches(".*Sab.*")) {
+                System.out.println("Found " + thePlayer.playerName);
+                System.out.println("Last name is " + thePlayer.playerName.split(" ")[1]);
+            }
+        }
+        System.out.println("* * * * * "); 
+        
+        
+        StringBuilder familyNameFirst = new StringBuilder();
+        for (Player thePlayer: team1.playerArray) {
+            String[] name = thePlayer.playerName.split(" ");
+            familyNameFirst.append(name[1]);
+            familyNameFirst.append(", ");
+            familyNameFirst.append(name[0]);
+            System.out.println(familyNameFirst);
+            familyNameFirst.delete(0,familyNameFirst.length());
+            
+        } 
     }   
 }
