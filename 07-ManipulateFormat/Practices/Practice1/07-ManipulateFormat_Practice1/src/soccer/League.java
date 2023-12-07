@@ -61,7 +61,8 @@ public class League {
                 currGame.goals[0].theTeam.teamName);
         
        System.out.println("* * * * * "); 
-//Practice 7.1
+       
+//Practice 7.1 Find Team2 player's name which has "Sab" using regerex
         for (Player thePlayer: team2.playerArray) {
             //System.out.println(thePlayer.playerName);
             if (thePlayer.playerName.matches(".*Sab.*")) {
@@ -71,7 +72,7 @@ public class League {
         }
         System.out.println("* * * * * "); 
         
-        
+        //Display all team1 players, format lastname, firstname
         StringBuilder familyNameFirst = new StringBuilder();
         for (Player thePlayer: team1.playerArray) {
             String[] name = thePlayer.playerName.split(" ");
