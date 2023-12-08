@@ -17,6 +17,31 @@ public class League {
      */
     public static void main(String[] args) {
         
+          
+        /* Practice 8-1. End of code that builds teams */
+        
+        /* Practice 8-1. Delete next three lines */
+        Game currGame = new Game();
+        currGame.homeTeam = team1;
+        currGame.awayTeam = team2;
+        
+        Goal goal1 = new Goal();
+        goal1.thePlayer = currGame.homeTeam.playerArray[2];
+        goal1.theTeam = currGame.homeTeam;
+        goal1.theTime = 55;
+        Goal[] theGoals = {goal1};
+        currGame.goals = theGoals;
+        
+        System.out.println("Goal scored after " + 
+                currGame.goals[0].theTime + " mins by " +
+                currGame.goals[0].thePlayer.playerName + " of " +
+                currGame.goals[0].theTeam.teamName);
+  
+    }
+    
+    
+    /* Practice 8-1. Add new static method createTeams() here */
+    public static Team[] createTeams(){
         /* Practice 8-1. Start of code that builds teams */
         // Create team1      
         Player player1 = new Player();
@@ -41,31 +66,9 @@ public class League {
         team2.playerArray[1].playerName = "Robbie Burns";
         team2.playerArray[2] = new Player();
         team2.playerArray[2].playerName = "Rafael Sabatini";
-        
-        /* Practice 8-1. End of code that builds teams */
-        
-        /* Practice 8-1. Delete next three lines */
-        Game currGame = new Game();
-        currGame.homeTeam = team1;
-        currGame.awayTeam = team2;
-        
-        Goal goal1 = new Goal();
-        goal1.thePlayer = currGame.homeTeam.playerArray[2];
-        goal1.theTeam = currGame.homeTeam;
-        goal1.theTime = 55;
-        Goal[] theGoals = {goal1};
-        currGame.goals = theGoals;
-        
-        System.out.println("Goal scored after " + 
-                currGame.goals[0].theTime + " mins by " +
-                currGame.goals[0].thePlayer.playerName + " of " +
-                currGame.goals[0].theTeam.teamName);
-  
+      
+    
     }
-    
-    
-    /* Practice 8-1. Add new static method createTeams() here */
-    
     
     /* Practice 8-1. Add new static method createGames() here */
     

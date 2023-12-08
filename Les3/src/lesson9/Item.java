@@ -1,19 +1,16 @@
-package lesson8;
+package lesson9;
 
-import ex06_2_exercise.*;
 
 public class Item {
-        public int itemID;
-        public String desc;
-        public double price;
-        public int quantity;
-        public String size;
-  
-        
-        public void setSize(String sizeArg){
-        this.size = sizeArg;
+    private double price = 15.50;
+
+    public void setPrice(Customer cust) {
+        if (cust.hasLoyaltyDiscount()) {
+            price = price * .85;
         }
-           
-        
+        System.out.println(price);
+    }
+
 }
+
 
