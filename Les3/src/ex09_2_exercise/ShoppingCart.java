@@ -7,17 +7,13 @@ package ex09_2_exercise;
 //    by calling the custom constructor.  
 //3. Test it by printing the customer object name 
 //    (call getName method).
-
 public class ShoppingCart {
 
     public static void main(String args[]) {
         // Declare, instantiate, and initialize a Customer object
-     Customer cust1 = new Customer("Owethu", "1234");
-     
+        Customer cust1 = new Customer("Owethu", "1234");
 
-
-	// Print the customer object name
-
+        // Print the customer object name
         System.out.println("The name of the customer is " + cust1.getName());
     }
 }
