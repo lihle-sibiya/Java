@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package soccer;
 
 /**
@@ -11,15 +10,19 @@ package soccer;
  * @author Administrator
  */
 public class Game {
-    
+
     public Team homeTeam;
     public Team awayTeam;
     public Goal[] goals;
-    
+
     /* Practice 8-2. Add playGame() method here */
-    
-    
+    public Game() {
+    }
+
+    public void playGame(){
+    int numberOfGoals = (int)(Math.random() * 7);
+        System.out.println(numberOfGoals);
+        
+    }
     /* Practice 8-2. Add getDescription() method here */
-    
-      
 }
