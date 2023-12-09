@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package soccer;
 
 /**
@@ -11,9 +10,11 @@ package soccer;
  * @author Administrator
  */
 public class Goal {
-    
+
     public Team theTeam;
     public Player thePlayer;
     public double theTime;
-    
+
+    public Goal() {
+    }
 }

@@ -1,16 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package utility;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import soccer.*;
+
+import soccer.Game;
+import soccer.Goal;
+import soccer.Team;
 
 /**
  *
@@ -18,44 +16,54 @@ import soccer.*;
  */
 public class GameUtils {
 
+    public GameUtils() {
+    }
+
     public static void addGameGoals(Game currGame) {
 
         if (currGame.goals == null) {
             currGame.goals = new Goal[(int) (Math.random() * 10)];   // If goals not initialized max will be 9
         }
 
-        //System.out.println(currGame.goals.length);
-        int i = 0;
-        for (Goal currGoal : currGame.goals) {
-            currGoal = new Goal();
-            currGoal.theTeam = Math.random() > 0.5 ? getHomeTeam(currGame, "home") : getHomeTeam(currGame, "away");
-            currGoal.thePlayer = currGoal.theTeam.playerArray[(int) (Math.random() * currGoal.theTeam.playerArray.length)];
-            currGoal.theTime = (int) (Math.random() * 90);
-            currGame.goals[i] = currGoal;
-            i++;
+        if (currGame.goals == null) {
+            currGame.goals = new Goal[(int) (Math.random() * 10.0)];
         }
-        Arrays.sort(currGame.goals, (g1, g2) -> Double.valueOf(g1.theTime).compareTo(Double.valueOf(g2.theTime)));
 
+        int i = 0;
+        Goal[] arr$ = currGame.goals;
+        int len$ = arr$.length;
+
+        for (int i$ = 0; i$ < len$; ++i$) {
+            Goal var10000 = arr$[i$];
+            Goal currGoal = new Goal();
+            currGoal.theTeam = Math.random() > 0.5 ? getHomeTeam(currGame, "home") : getHomeTeam(currGame, "away");
+            currGoal.thePlayer = currGoal.theTeam.playerArray[(int) (Math.random() * (double) currGoal.theTeam.playerArray.length)];
+            currGoal.theTime = (double) ((int) (Math.random() * 90.0));
+            currGame.goals[i] = currGoal;
+            ++i;
+        }
+
+        Arrays.sort(currGame.goals, (var0, var1) -> {
+            return Double.valueOf(var0.theTime).compareTo(var1.theTime);
+        });
     }
 
     // Uses reflection so works with getter method or public field
     private static Team getHomeTeam(Game currGame, String homeOrAway) {
         Team theTeam = null;
-        Method m;
-        Field f;
+
         try {
-            m = Game.class.getMethod("get" + Character.toUpperCase(homeOrAway.charAt(0)) + homeOrAway.substring(1) + "Team");
-            theTeam = (Team)m.invoke(currGame);
-        } catch (NoSuchMethodException|IllegalAccessException|InvocationTargetException em) {
+            Method m = Game.class.getMethod("get" + Character.toUpperCase(homeOrAway.charAt(0)) + homeOrAway.substring(1) + "Team");
+            theTeam = (Team) m.invoke(currGame);
+        } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException var8) {
             try {
-                f = Game.class.getField(homeOrAway + "Team");
-                theTeam = (Team)f.get(currGame);
-            } catch (NoSuchFieldException|IllegalAccessException ef) { 
-                System.out.println("The addGoals() utility requires the Goal class to contain either:\n" +
-                        "public String fields called homeTeam and awayTeam, OR,\n" +
-                        "public accessor methods called getHomeTeam() and getAwayTeam().");
+                Field f = Game.class.getField(homeOrAway + "Team");
+                theTeam = (Team) f.get(currGame);
+            } catch (IllegalAccessException | NoSuchFieldException var7) {
+                System.out.println("The addGoals() utility requires the Goal class to contain either:\npublic String fields called homeTeam and awayTeam, OR,\npublic accessor methods called getHomeTeam() and getAwayTeam().");
             }
         }
+
         return theTeam;
     }
 }

@@ -11,27 +11,18 @@ package soccer;
  */
 public class League {
 
+    public League() {
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
         Team[] theTeams = createTeams();
         Game[] theGames = createGames(theTeams);
-
         Game currGame = theGames[0];
-
-
-        /* Practice 8-2. End of code that creates a Goal and assigns to a Team and a Game */
-        
-        /* Practice 8-2. Add code to initialize the array currGame.goals to a random size */
-        
-        // Print out goal details
-//        System.out.println("Goal scored after "
-//                + currGame.goals[0].theTime + " mins by "
-//                + currGame.goals[0].thePlayer.playerName + " of "
-//                + currGame.goals[0].theTeam.teamName);
-
+        currGame.playGame();
+        System.out.println(currGame.getDescription());
     }
 
     public static Team[] createTeams() {
@@ -67,8 +58,7 @@ public class League {
         Game theGame = new Game();
         theGame.homeTeam = theTeams[0];
         theGame.awayTeam = theTeams[1];
-        Game[] theGames = {theGame};
+        Game[] theGames = new Game[]{theGame};
         return theGames;
     }
-
 }

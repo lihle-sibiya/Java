@@ -5,6 +5,8 @@
  */
 package soccer;
 
+import utility.GameUtils;
+
 /**
  *
  * @author Administrator
@@ -19,10 +21,25 @@ public class Game {
     public Game() {
     }
 
-    public void playGame(){
-    int numberOfGoals = (int)(Math.random() * 7);
-        System.out.println(numberOfGoals);
-        
+    public void playGame() {
+        int numberOfGoals = (int) (Math.random() * 7.0);
+        Goal[] theGoals = new Goal[numberOfGoals];
+        this.goals = theGoals;
+        GameUtils.addGameGoals(this);
     }
+
     /* Practice 8-2. Add getDescription() method here */
+    public String getDescription() {
+        StringBuilder returnString = new StringBuilder();
+        Goal[] arr$ = this.goals;
+        int len$ = arr$.length;
+
+        for (int i$ = 0; i$ < len$; ++i$) {
+            Goal currGoal = arr$[i$];
+            returnString.append("Goal scored after " + currGoal.theTime + " mins by " + currGoal.thePlayer.playerName + " of " + currGoal.theTeam.teamName + "\n");
+        }
+
+        return returnString.toString();
+    }
+
 }
