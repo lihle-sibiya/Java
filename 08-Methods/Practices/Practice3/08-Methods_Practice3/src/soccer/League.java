@@ -5,8 +5,6 @@
  */
 package soccer;
 
-
-
 /**
  *
  * @author Administrator
@@ -19,18 +17,16 @@ public class League {
     public static void main(String[] args) {
 
         League theLeague = new League();
-        Team[] theTeams = createTeams();
+        Team[] theTeams = theLeague.createTeams();
         Game[] theGames = theLeague.createGames(theTeams);
-
         Game currGame = theGames[0];
-        
         currGame.playGame();
-        
+
         System.out.println(currGame.getDescription());
 
     }
 
-    public static Team[] createTeams() {
+    public Team[] createTeams() {
 
         Player player1 = new Player();
         player1.playerName = "George Eliot";
@@ -59,7 +55,7 @@ public class League {
         return theTeams;
     }
 
-    public  Game[] createGames(Team[] theTeams) {
+    public Game[] createGames(Team[] theTeams) {
         Game theGame = new Game();
         theGame.homeTeam = theTeams[0];
         theGame.awayTeam = theTeams[1];

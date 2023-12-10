@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package soccer;
 
 /**
@@ -11,12 +10,25 @@ package soccer;
  * @author Administrator
  */
 public class Team {
-    
+
     private String teamName;
     private Player[] playerArray;
-    
-    /* Practice 9-2. Add the two constructors here */
 
+    /* Practice 9-2. Add the two constructors here */
+    public Team(String teamName) {
+        this.teamName = teamName;
+    }
+    
+    //Another constructor
+    public Team(String teamName, Player[] players){
+    this.(teamName);
+        this.playerArray = players;
+    }
+
+    
+     //Default no argument constructor
+    public Team(){
+    }
     /**
      * @return the teamName
      */
@@ -31,7 +43,7 @@ public class Team {
         this.teamName = teamName;
     }
 
-    /**
+     /**
      * @return the playerArray
      */
     public Player[] getPlayerArray() {
@@ -44,5 +56,5 @@ public class Team {
     public void setPlayerArray(Player[] playerArray) {
         this.playerArray = playerArray;
     }
-    
+
 }

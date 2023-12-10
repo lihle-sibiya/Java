@@ -15,8 +15,15 @@ public class Player {
     private String playerName;
     
     /* Practice 9-2. Add the constructor here */
+    public Player(String playerName){
+        this.playerName = playerName;
+    }
     
-
+    
+    //Another constructor
+     public Player() {
+     }
+    
     /**
      * @return the playerName
      */
@@ -27,8 +34,6 @@ public class Player {
     /**
      * @param playerName the playerName to set
      */
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
+    
     
 }
