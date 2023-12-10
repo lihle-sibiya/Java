@@ -33,7 +33,7 @@ public class League {
         player2.playerName = "Graham Greene";
         Player player3 = new Player();
         player3.playerName = "Geoffrey Chaucer";
-        Player[] thePlayers = {player1, player2, player3};
+        Player[] thePlayers = new Player[]{player1, player2, player3};
 
         Team team1 = new Team();
         team1.teamName = "The Greens";
@@ -50,7 +50,7 @@ public class League {
         team2.playerArray[2] = new Player();
         team2.playerArray[2].playerName = "Rafael Sabatini";
 
-        Team[] theTeams = {team1, team2};
+        Team[] theTeams = new Team[]{team1, team2};
         return theTeams;
     }
 
