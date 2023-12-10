@@ -21,7 +21,7 @@ public class Team {
     
     //Another constructor
     public Team(String teamName, Player[] players){
-    this.(teamName);
+    this.teamName = teamName;
         this.playerArray = players;
     }
 
