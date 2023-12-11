@@ -1,10 +1,3 @@
-package ex11_4_exercise;
-
-//Exercise 11-4
-
-import java.util.ArrayList;
-
-//
 //1. In the main method of ShoppingCart, declare, instantiate, 
 //     and initialize at least 3 elements in an ArrayList of Strings.  
 //2. Print the ArrayList and run it to test your code.  
@@ -18,26 +11,31 @@ import java.util.ArrayList;
 //     Hint: Use the contains method.  It returns a boolean 
 //     and takes a single argument as the search criteria.
 //6. Print the list again.
+package ex11_4_exercise;
+
+import java.util.ArrayList;
 
 public class ShoppingCart {
     public static void main(String[] args){   
         // Declare, instantiate, and initialize an ArrayList of Strings.  Print and test your code.
-        ArrayList<String> myArrayList = new ArrayList();
-        myArrayList.add("Sue");
-        myArrayList.add("Sam");
-        myArrayList.add("Sizwe");
-        System.out.println("myArrayList");
-        // add (insert) another element at a specific index
-myArrayList.add(2, "Joe");
-        System.out.println(myArrayList);
-
-	// Check for the existence of a specific String element.  
-        //   If it exists, remove it.
+        ArrayList <String> myArray = new ArrayList();
         
-        if (myArrayList.contains("Sue")){
-        myArrayList.remove("Sue");
+        // add (insert) another element at a specific index
+myArray.add("Sue");
+myArray.add("Sam");
+myArray.add("Sizwe");
+
+        System.out.println(myArray);
+
+myArray.add(2, "Joe");
+        System.out.println(myArray);
+	// Check for the existence of a specific String element.  
+        //   If it exists2, remove it.
+        if (myArray.contains("Sue"))
+        {
+        myArray.remove("Sue");
+        
         }
-        System.out.println(myArrayList);
-                
+        System.out.println(myArray);
     }
 }

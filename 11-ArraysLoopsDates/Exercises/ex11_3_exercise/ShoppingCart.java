@@ -1,7 +1,3 @@
-package ex11_3_exercise;
-
-//Exercise 11-3
-//
 //In the ShoppingCart class:
 //1.  Code the displayTotal method.  Use a standard for loop to 
 //      iterate through the items array.
@@ -10,6 +6,7 @@ package ex11_3_exercise;
 //3.  If it is not out of stock, add the item price to a total variable 
 //      that you declare and initialize prior to the for loop.
 //4.  Print the Shopping Cart total with a suitable label.
+package ex11_3_exercise;
 
 public class ShoppingCart {
 
@@ -25,17 +22,18 @@ public class ShoppingCart {
     // Use a standard for loop to iterate through the items array, adding up the total price
     //    Skip any items that are back ordered.  Display the Shopping Cart total.
     public void displayTotal() {
-        double total = 0;
+ double total = 0;
         for (Item item : items) {
-            
-            if (item.isBackOrdered()) {
-                continue;
-            } else {
-                total += item.getPrice();
-            }
+           if (item.isBackOrdered())
+           {
+           continue;
+           }
+            else
+           {
+           total += item.getPrice();
+           }
+            System.out.println("Total is :" +total);
         }
-        System.out.println("Total is : " + total);
+
     }
-    
-    
 }
