@@ -1,7 +1,7 @@
 Exercise 11-1
 
 1. Declare a LocalDateTime object to hold the order date.
-2. Initialze the object to the current date and time using the 
+2. Initialize the object to the current date and time using the 
      now static method of the class.
 3. Print the orderDate object with a suitable label.  
 4. Format the orderDate, using the ISO_LOCAL_DATE static constant 

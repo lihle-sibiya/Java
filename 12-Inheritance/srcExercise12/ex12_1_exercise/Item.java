@@ -1,7 +1,3 @@
-package ex12_1_exercise;
-
-//Exercise 12-1
-//
 //1.  Examine the Item class.  Pay close attention to the 
 //      overloaded constructor and also the display method.
 //2.  Create a new class called Shirt that inherits from Item.
@@ -12,6 +8,13 @@ package ex12_1_exercise;
 //            literal for the desc arg ("Shirt") and pass the price argument 
 //            from this constructor. 
 //	-  Assign the size and colorCode fields.
+//
+//In the ShoppingCart class, 
+//6.  Declare and instantiate a Shirt object, using the 3 arg constructor.
+//7.  Call the display() method on the object reference. 
+//      Where is the display method coded?
+
+package ex12_1_exercise;
 
 public class Item {
     private int id;
