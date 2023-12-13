@@ -50,24 +50,22 @@ public class Trousers extends Clothing {
         this.gender = gender;
     }
 
-    public void display() {
-        System.out.println("Item id " + super.getItemID());
-        System.out.println("Item description " + super.getDesc());
-        System.out.println("Color code " + super.getColourCode());
-        System.out.println("Price " + super.getPrice());
-        System.out.println("Fit " + fit);
-        System.out.println("Gender " + gender);
+//    @Override
+//    public void display() {
+//        System.out.println("Item id " + super.getItemID());
+//        System.out.println("Item description " + super.getDesc());
+//        System.out.println("Color code " + super.getColourCode());
+//        System.out.println("Price " + super.getPrice());
+//        System.out.println("Fit " + fit);
+//        System.out.println("Gender " + gender);
+//
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return ("Fit " + fit + "Gender " + gender);
+//
+//    }
 
-    }
-
-    @Override
-    public String toString() {
-        return ("Fit " + fit + "Gender " + gender);
-
-    }
-
-    @Override
-    public String doReturn() {
-        return "Trousers that were amended cannot be returned!"
-    }
+    
 }

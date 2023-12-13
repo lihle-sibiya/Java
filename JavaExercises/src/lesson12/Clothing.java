@@ -8,14 +8,15 @@ package lesson12;
  *
  * @author Lihle
  */
-public abstract class Clothing {
+public class Clothing {
     private int itemID =0;
-    private String desc = "description required";
+    private String desc = "requires description";
     private char colourCode ='U';
     private double price = 0.0;   
     
     
-    public Clothing (int ItemID, String desc, char color,double price){
+    public Clothing (int ItemID, String desc, char color,double price)
+{
 this.itemID= ItemID;
 this.desc=desc;
 this.colourCode =color;
@@ -23,10 +24,10 @@ this.price=price;
 
 }
     public void display (){
-//        System.out.println("item id "+ getItemID());
-//        System.out.println("item description "+ getDesc());
-//        System.out.println("item price "+ getPrice());
-//        System.out.println("color code "+ getColourCode());
+        System.out.println("item id "+ getItemID());
+        System.out.println("item description "+ getDesc());
+        System.out.println("item price "+ getPrice());
+        System.out.println("color code "+ getColourCode());
     }
 
     /**

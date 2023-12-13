@@ -6,6 +6,8 @@
 
 package utility;
 
+import soccer.Player;
+
 
 /**
  *
@@ -55,5 +57,9 @@ String authorList =
 "William Makepeace Thackeray," +
 "W. B. Yeats," +
 "Wilkie Collins";
+
+    public Player[] getTeam(int teamSize) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

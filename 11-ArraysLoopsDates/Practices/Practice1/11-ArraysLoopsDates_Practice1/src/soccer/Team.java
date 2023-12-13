@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package soccer;
 
 /**
@@ -11,85 +10,61 @@ package soccer;
  * @author Administrator
  */
 public class Team {
-    
+
     private String teamName;
     private Player[] playerArray;
     private int pointsTotal;
     private int goalsTotal;
-    
-    public void incGoalsTotal(int goals){
+
+    public void incGoalsTotal(int goals) {
         this.setGoalsTotal(this.getGoalsTotal() + goals);
     }
 
-    public void incPointsTotal(int points){
+    public void incPointsTotal(int points) {
         this.pointsTotal += points;
     }
-    
+
     public Team(String teamName) {
         this.teamName = teamName;
     }
-    
+
     public Team(String teamName, Player[] players) {
         this(teamName);
         this.playerArray = players;
     }
-    
-    public Team() {}
 
-    /**
-     * @return the teamName
-     */
-    public String getTeamName() {
-        return teamName;
+    public Team() {
     }
 
-    /**
-     * @param teamName the teamName to set
-     */
+    public String getTeamName() {
+        return this.teamName;
+    }
+
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
 
-    /**
-     * @return the playerArray
-     */
     public Player[] getPlayerArray() {
-        return playerArray;
+        return this.playerArray;
     }
 
-    /**
-     * @param playerArray the playerArray to set
-     */
     public void setPlayerArray(Player[] playerArray) {
         this.playerArray = playerArray;
     }
 
-    /**
-     * @return the pointsTotal
-     */
     public int getPointsTotal() {
-        return pointsTotal;
+        return this.pointsTotal;
     }
 
-    /**
-     * @param pointsTotal the pointsTotal to set
-     */
     public void setPointsTotal(int pointsTotal) {
         this.pointsTotal = pointsTotal;
     }
 
-    /**
-     * @return the goalsTotal
-     */
     public int getGoalsTotal() {
-        return goalsTotal;
+        return this.goalsTotal;
     }
 
-    /**
-     * @param goalsTotal the goalsTotal to set
-     */
     public void setGoalsTotal(int goalsTotal) {
         this.goalsTotal = goalsTotal;
     }
-    
 }

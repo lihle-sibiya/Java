@@ -40,15 +40,15 @@ public class Shirt extends Clothing {
         this.fit = fit;
     }
 
-    @Override
-    public String toString() {
-        return ("This shirt is a great fit " + fit + "\nGender " + gender);
-    }
+//    @Override
+//    public String toString() {
+//        return ("This shirt is a great fit " + fit + "\nGender " + gender);
+//    }
     
-    @Override
-    public String doReturn () {
-    return ("Shirt is");
-    }
+//    @Override
+//    public String doReturn () {
+//    return ("Shirt is");
+//    }
     
 
 }

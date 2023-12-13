@@ -17,34 +17,31 @@ public class Game {
     private Team awayTeam;
     private Goal[] goals;
 
-    public Game(Team homeTeam, Team awayTeam) {
-        this.homeTeam = homeTeam;
-        this.awayTeam = awayTeam;
-    }
+ public Game(Team homeTeam, Team awayTeam) {
+      this.homeTeam = homeTeam;
+      this.awayTeam = awayTeam;
+   }
 
-    public void playGame(int maxGoals) {
-        int numberOfGoals = (int) (Math.random() * maxGoals + 1);
-        Goal[] theGoals = new Goal[numberOfGoals];
-        this.setGoals(theGoals);
-        GameUtils.addGameGoals(this);
-    }
+   public void playGame(int maxGoals) {
+      int numberOfGoals = (int)(Math.random() * (double)maxGoals + 1.0);
+      Goal[] theGoals = new Goal[numberOfGoals];
+      this.setGoals(theGoals);
+      GameUtils.addGameGoals(this);
+   }
 
-    public void playGame() {
-        playGame(6);
-    }
+   public void playGame() {
+      this.playGame(6);
+   }
 
-    public String getDescription() {
+   public String getDescription() {
+      int homeTeamGoals = 0;
+      int awayTeamGoals = 0;
+      StringBuilder returnString = new StringBuilder();
+      returnString.append(this.getHomeTeam().getTeamName() + " vs. " + this.getAwayTeam().getTeamName() + "\n");
+      Goal[] arr$ = this.getGoals();
+      int len$ = arr$.length;
 
-        int homeTeamGoals = 0;
-        int awayTeamGoals = 0;
-        StringBuilder returnString = new StringBuilder();
-
-        returnString.append(this.getHomeTeam().getTeamName() + " vs. "
-                + this.getAwayTeam().getTeamName() + "\n");
-        Goal[] arr$ = this.getGoals();
-        int len$ = arr$.length;
-
- for(int i$ = 0; i$ < len$; ++i$) {
+      for(int i$ = 0; i$ < len$; ++i$) {
          Goal currGoal = arr$[i$];
          if (currGoal.getTheTeam() == this.homeTeam) {
             ++homeTeamGoals;
@@ -73,46 +70,27 @@ public class Game {
       return returnString.toString();
    }
 
-    /**
-     * @return the homeTeam
-     */
-    public Team getHomeTeam() {
-        return homeTeam;
-    }
+   public Team getHomeTeam() {
+      return this.homeTeam;
+   }
 
-    /**
-     * @param homeTeam the homeTeam to set
-     */
-    public void setHomeTeam(Team homeTeam) {
-        this.homeTeam = homeTeam;
-    }
+   public void setHomeTeam(Team homeTeam) {
+      this.homeTeam = homeTeam;
+   }
 
-    /**
-     * @return the awayTeam
-     */
-    public Team getAwayTeam() {
-        return awayTeam;
-    }
+   public Team getAwayTeam() {
+      return this.awayTeam;
+   }
 
-    /**
-     * @param awayTeam the awayTeam to set
-     */
-    public void setAwayTeam(Team awayTeam) {
-        this.awayTeam = awayTeam;
-    }
+   public void setAwayTeam(Team awayTeam) {
+      this.awayTeam = awayTeam;
+   }
 
-    /**
-     * @return the goals
-     */
-    public Goal[] getGoals() {
-        return goals;
-    }
+   public Goal[] getGoals() {
+      return this.goals;
+   }
 
-    /**
-     * @param goals the goals to set
-     */
-    public void setGoals(Goal[] goals) {
-        this.goals = goals;
-    }
-
+   public void setGoals(Goal[] goals) {
+      this.goals = goals;
+   }
 }

@@ -10,32 +10,33 @@ import soccer.*;
 
 /**
  *
- * @author ksomervi
+ * @author Administrator
  */
 public class GameUtils {
+   public GameUtils() {
+   }
 
-    public static void addGameGoals(Game currGame) {
-        
-        //System.out.println(currGame.awayTeam + " : " + currGame.homeTeam);
+   public static void addGameGoals(Game currGame) {
+      if (currGame.getGoals() == null) {
+         currGame.setGoals(new Goal[(int)(Math.random() * 10.0)]);
+      }
 
-        // Or possibly throw an Exception?
-        if (currGame.getGoals() == null) {
-            currGame.setGoals(new Goal[(int) (Math.random() * 10)]);   // If goals not initialized max will be 9
-        }
+      int i = 0;
+      Goal[] arr$ = currGame.getGoals();
+      int len$ = arr$.length;
 
-        //System.out.println(currGame.goals.length);
-        int i = 0;
-        for (Goal currGoal : currGame.getGoals()) {
-            currGoal = new Goal();
-            currGoal.setTheTeam(Math.random() > 0.5 ? currGame.getHomeTeam() : currGame.getAwayTeam());
-            currGoal.setThePlayer(currGoal.getTheTeam().getPlayerArray()[(int) (Math.random() * currGoal.getTheTeam().getPlayerArray().length)]);
-            currGoal.setTheTime((int) (Math.random() * 90));
-            currGame.getGoals()[i] = currGoal;
-            i++;
-        }
-        Arrays.sort(currGame.getGoals(), (g1, g2) -> Double.valueOf(g1.getTheTime()).compareTo(Double.valueOf(g2.getTheTime())));
+      for(int i$ = 0; i$ < len$; ++i$) {
+         Goal var10000 = arr$[i$];
+         Goal currGoal = new Goal();
+         currGoal.setTheTeam(Math.random() > 0.5 ? currGame.getHomeTeam() : currGame.getAwayTeam());
+         currGoal.setThePlayer(currGoal.getTheTeam().getPlayerArray()[(int)(Math.random() * (double)currGoal.getTheTeam().getPlayerArray().length)]);
+         currGoal.setTheTime((double)((int)(Math.random() * 90.0)));
+         currGame.getGoals()[i] = currGoal;
+         ++i;
+      }
 
-    }
-
-
+      Arrays.sort(currGame.getGoals(), (var0, var1) -> {
+         return Double.valueOf(var0.getTheTime()).compareTo(var1.getTheTime());
+      });
+   }
 }

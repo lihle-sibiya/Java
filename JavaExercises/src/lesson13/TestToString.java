@@ -11,13 +11,13 @@ package lesson13;
 public class TestToString {
     public static void main(String[] args) {
         
-        Shirt shirt02 = new Shirt(1, "Long Sleeve",)
-    
-                Trousers c1 = new Trousers(, "Trousers");
-                
-                System.out.println(c1);
-                System.out.println(shirt02);
-                System.out.println(shirt02.doReturn());
+//        Shirt shirt02 = new Shirt(1, "Long Sleeve",)
+//    
+//                Trousers c1 = new Trousers(, "Trousers");
+//                
+//                System.out.println(c1);
+//                System.out.println(shirt02);
+//                System.out.println(shirt02.doReturn());
                 }
     
 }

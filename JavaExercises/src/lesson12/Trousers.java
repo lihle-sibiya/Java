@@ -11,15 +11,15 @@ import lesson12.Clothing;
  * @author Lihle
  */
 public class Trousers extends Clothing {
-
-    private char fit;
+     private char fit;
     private char gender;
-
-    public Trousers(int ItemID, String desc, char colorCode, double price, char fit, char gender) {
-        super(ItemID, desc, colorCode, price);
-        this.fit = fit;
-        this.gender = gender;
+    public Trousers(int ItemID, String desc, char colorCode,double price,char fit, char gender)
+    {
+    super(ItemID, desc, colorCode, price);
+    this.fit =fit;
+    this.gender = gender;
     }
+   
 
     /**
      * @return the fit
@@ -47,20 +47,5 @@ public class Trousers extends Clothing {
      */
     public void setGender(char gender) {
         this.gender = gender;
-    }
-    
-    public void display() {
-   System.out.println("Item id " + super.getItemID());
-   System.out.println("Item description " + super.getDesc());
-   System.out.println("Color code " + super.getColourCode());
-   System.out.println("Price " + super.getPrice());
-   System.out.println("Fit " + fit);
-   System.out.println("Gender " + gender);
-    
-    }
-    @Override
-    public String toString(){
-    return ("Fit " + fit + "Gender " + gender);
-    
     }
 }

@@ -8,6 +8,6 @@ package lesson11;
  *
  * @author Lihle
  */
-public class ArgumentsTest {
+public class ArrayListTest {
     
 }
