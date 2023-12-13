@@ -25,7 +25,7 @@ public class ShoppingCart {
     public static void main(String[] args){
         ShoppingCart cart = new ShoppingCart();
         cart.fillCart();
-        cart.removeItemFromCart("Shirt");
+        cart.removeItemFromCart("Trousers");
         //Exercise
         System.out.println(cart.items);
     }
