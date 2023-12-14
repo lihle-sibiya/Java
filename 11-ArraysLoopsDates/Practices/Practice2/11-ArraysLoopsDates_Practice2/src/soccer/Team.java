@@ -11,60 +11,85 @@ package soccer;
  * @author Administrator
  */
 public class Team {
-   private String teamName;
-   private Player[] playerArray;
-   private int pointsTotal;
-   private int goalsTotal;
+    
+    private String teamName;
+    private Player[] playerArray;
+    private int pointsTotal;
+    private int goalsTotal;
+    
+    public void incGoalsTotal(int goals){
+        this.setGoalsTotal(this.getGoalsTotal() + goals);
+    }
 
-   public void incGoalsTotal(int goals) {
-      this.setGoalsTotal(this.getGoalsTotal() + goals);
-   }
+    public void incPointsTotal(int points){
+        this.pointsTotal += points;
+    }
+    
+    public Team(String teamName) {
+        this.teamName = teamName;
+    }
+    
+    public Team(String teamName, Player[] players) {
+        this(teamName);
+        this.playerArray = players;
+    }
+    
+    public Team() {}
 
-   public void incPointsTotal(int points) {
-      this.pointsTotal += points;
-   }
+    /**
+     * @return the teamName
+     */
+    public String getTeamName() {
+        return teamName;
+    }
 
-   public Team(String teamName) {
-      this.teamName = teamName;
-   }
+    /**
+     * @param teamName the teamName to set
+     */
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
 
-   public Team(String teamName, Player[] players) {
-      this(teamName);
-      this.playerArray = players;
-   }
+    /**
+     * @return the playerArray
+     */
+    public Player[] getPlayerArray() {
+        return playerArray;
+    }
 
-   public Team() {
-   }
+    /**
+     * @param playerArray the playerArray to set
+     */
+    public void setPlayerArray(Player[] playerArray) {
+        this.playerArray = playerArray;
+    }
 
-   public String getTeamName() {
-      return this.teamName;
-   }
+    /**
+     * @return the pointsTotal
+     */
+    public int getPointsTotal() {
+        return pointsTotal;
+    }
 
-   public void setTeamName(String teamName) {
-      this.teamName = teamName;
-   }
+    /**
+     * @param pointsTotal the pointsTotal to set
+     */
+    public void setPointsTotal(int pointsTotal) {
+        this.pointsTotal = pointsTotal;
+    }
 
-   public Player[] getPlayerArray() {
-      return this.playerArray;
-   }
+    /**
+     * @return the goalsTotal
+     */
+    public int getGoalsTotal() {
+        return goalsTotal;
+    }
 
-   public void setPlayerArray(Player[] playerArray) {
-      this.playerArray = playerArray;
-   }
-
-   public int getPointsTotal() {
-      return this.pointsTotal;
-   }
-
-   public void setPointsTotal(int pointsTotal) {
-      this.pointsTotal = pointsTotal;
-   }
-
-   public int getGoalsTotal() {
-      return this.goalsTotal;
-   }
-
-   public void setGoalsTotal(int goalsTotal) {
-      this.goalsTotal = goalsTotal;
-   }
+    /**
+     * @param goalsTotal the goalsTotal to set
+     */
+    public void setGoalsTotal(int goalsTotal) {
+        this.goalsTotal = goalsTotal;
+    }
+    
 }

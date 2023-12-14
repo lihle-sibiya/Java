@@ -11,21 +11,28 @@ package soccer;
  * @author Administrator
  */
 public class Player {
-   private String playerName;
+    
+    private String playerName;
+    
+    public Player(String playerName) {
+        this.playerName = playerName;
+    }
+    
+    public Player() {}
 
-   public Player(String playerName) {
-      this.playerName = playerName;
-   }
+    /**
+     * @return the playerName
+     */
+    public String getPlayerName() {
+        return playerName;
+    }
 
-   public Player() {
-   }
-
-   public String getPlayerName() {
-      return this.playerName;
-   }
-
-   public void setPlayerName(String playerName) {
-      this.playerName = playerName;
-   }
+    /**
+     * @param playerName the playerName to set
+     */
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+    
 }
 

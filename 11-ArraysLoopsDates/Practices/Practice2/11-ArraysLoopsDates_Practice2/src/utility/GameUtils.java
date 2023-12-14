@@ -10,7 +10,7 @@ import soccer.*;
 
 /**
  *
- * @author ksomervi
+ * @author Lihle
  */
 public class GameUtils {
 

@@ -1,23 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package soccer;
 
 /**
  *
- * @author Administrator
+ * @author Lihle
  */
-
-/* Practice 12-2. Make this class extend GameEvent */
-public class Goal extends GameEvent  {
-
-    public Goal() {
-    }
+public abstract class GameEvent {
     
-    /* Practice 12-2. Start selection here for code in Goal to cut and paste to GameEvent  */
     private Team theTeam;
     private Player thePlayer;
     private double theTime;
@@ -63,7 +55,6 @@ public class Goal extends GameEvent  {
     public void setTheTime(double theTime) {
         this.theTime = theTime;
     }
-    
-    /* Practice 12-2. End selection here for code in Goal to cut and paste to GameEvent  */
+
     
 }

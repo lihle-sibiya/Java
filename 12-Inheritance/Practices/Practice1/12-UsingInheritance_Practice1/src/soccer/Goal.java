@@ -11,34 +11,51 @@ package soccer;
  * @author Administrator
  */
 public class Goal {
-   private Team theTeam;
-   private Player thePlayer;
-   private double theTime;
+    
+    private Team theTeam;
+    private Player thePlayer;
+    private double theTime;
 
-   public Goal() {
-   }
+    /**
+     * @return the theTeam
+     */
+    public Team getTheTeam() {
+        return theTeam;
+    }
 
-   public Team getTheTeam() {
-      return this.theTeam;
-   }
+    /**
+     * @param theTeam the theTeam to set
+     */
+    public void setTheTeam(Team theTeam) {
+        this.theTeam = theTeam;
+    }
 
-   public void setTheTeam(Team theTeam) {
-      this.theTeam = theTeam;
-   }
+    /**
+     * @return the thePlayer
+     */
+    public Player getThePlayer() {
+        return thePlayer;
+    }
 
-   public Player getThePlayer() {
-      return this.thePlayer;
-   }
+    /**
+     * @param thePlayer the thePlayer to set
+     */
+    public void setThePlayer(Player thePlayer) {
+        this.thePlayer = thePlayer;
+    }
 
-   public void setThePlayer(Player thePlayer) {
-      this.thePlayer = thePlayer;
-   }
+    /**
+     * @return the theTime
+     */
+    public double getTheTime() {
+        return theTime;
+    }
 
-   public double getTheTime() {
-      return this.theTime;
-   }
-
-   public void setTheTime(double theTime) {
-      this.theTime = theTime;
-   }
+    /**
+     * @param theTime the theTime to set
+     */
+    public void setTheTime(double theTime) {
+        this.theTime = theTime;
+    }
+    
 }

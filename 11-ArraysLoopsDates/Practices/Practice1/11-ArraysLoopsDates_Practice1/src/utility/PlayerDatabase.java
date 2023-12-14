@@ -6,6 +6,11 @@
 
 package utility;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+import java.util.StringTokenizer;
 import soccer.Player;
 
 
@@ -13,13 +18,31 @@ import soccer.Player;
  *
  * @author Administrator
  */
+
 public class PlayerDatabase {
     
-    /* Practice 11-2. Declare an ArrayList here */
+    private ArrayList <Player> players;
     
-    /* Practice 11-2. Add Constructor here */
+    public PlayerDatabase(){
+        StringTokenizer authorTokens = new StringTokenizer(authorList, ",");
+        players = new ArrayList();
+        while (authorTokens.hasMoreTokens()){
+            players.add(new Player(authorTokens.nextToken()));
+        }
+    }
     
-    /* Practice 11-2. Add getTeam() method here */
+    public Player[] getTeam(int numberOfPlayers){
+        Player[] teamPlayers = new Player[numberOfPlayers];
+        for (int i = 0; i < numberOfPlayers; i++){
+            int playerIndex = (int) (Math.random() * players.size());
+            teamPlayers[i] = players.get(playerIndex);
+            players.remove(playerIndex);
+        }
+        return teamPlayers;
+        
+    }
+    
+    
         
 String authorList = 
 "Agatha Christie," + 
@@ -57,9 +80,5 @@ String authorList =
 "William Makepeace Thackeray," +
 "W. B. Yeats," +
 "Wilkie Collins";
-
-    public Player[] getTeam(int teamSize) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
 }

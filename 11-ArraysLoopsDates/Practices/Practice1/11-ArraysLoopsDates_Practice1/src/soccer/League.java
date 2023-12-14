@@ -5,75 +5,73 @@ import java.util.StringTokenizer;
 import utility.PlayerDatabase;
 
 public class League {
-   public League() {
-   }
 
-   public static void main(String[] args) {
-      League theLeague = new League();
-      Team[] theTeams = theLeague.createTeams("The Robins,The Crows,The Swallows", 5);
-      Game[] theGames = theLeague.createGames(theTeams);
-      Game[] arr$ = theGames;
-      int len$ = theGames.length;
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
 
-      for(int i$ = 0; i$ < len$; ++i$) {
-         Game currGame = arr$[i$];
-         currGame.playGame();
-         System.out.println(currGame.getDescription());
-      }
+        League theLeague = new League();
 
-      theLeague.showBestTeam(theTeams);
-   }
+        Team[] theTeams = theLeague.createTeams("The Robins,The Crows,The Swallows", 5);
+        Game[] theGames = theLeague.createGames(theTeams);
 
-   public Team[] createTeams(String teamNames, int teamSize) {
-      PlayerDatabase playerDB = new PlayerDatabase();
-      StringTokenizer teamNameTokens = new StringTokenizer(teamNames, ",");
-      Team[] theTeams = new Team[teamNameTokens.countTokens()];
+        for (Game currGame : theGames) {
+            currGame.playGame();
+            System.out.println(currGame.getDescription());
+        }
 
-      for(int i = 0; i < theTeams.length; ++i) {
-         theTeams[i] = new Team(teamNameTokens.nextToken(), playerDB.getTeam(teamSize));
-      }
+        theLeague.showBestTeam(theTeams);
 
-      return theTeams;
-   }
+    }
 
-   public Game[] createGames(Team[] theTeams) {
-      ArrayList<Game> theGames = new ArrayList();
-      Team[] arr$ = theTeams;
-      int len$ = theTeams.length;
+    public Team[] createTeams(String teamNames, int teamSize) {
 
-      for(int i$ = 0; i$ < len$; ++i$) {
-         Team homeTeam = arr$[i$];
-         Team[] arr$ = theTeams;
-         int len$ = theTeams.length;
+        PlayerDatabase playerDB = new PlayerDatabase();
 
-         for(int i$ = 0; i$ < len$; ++i$) {
-            Team awayTeam = arr$[i$];
-            if (homeTeam != awayTeam) {
-               theGames.add(new Game(homeTeam, awayTeam));
+        StringTokenizer teamNameTokens = new StringTokenizer(teamNames, ",");
+        Team[] theTeams = new Team[teamNameTokens.countTokens()];
+        for (int i = 0; i < theTeams.length; i++) {
+            theTeams[i] = new Team(teamNameTokens.nextToken(), playerDB.getTeam(teamSize));
+        }
+
+        return theTeams;
+    }
+
+    public Game[] createGames(Team[] theTeams) {
+        ArrayList<Game> theGames = new ArrayList();
+
+        for (Team homeTeam : theTeams) {
+            for (Team awayTeam : theTeams) {
+                if (homeTeam != awayTeam) {
+                    theGames.add(new Game(homeTeam, awayTeam));
+                }
+
             }
-         }
-      }
+        }
 
-      return (Game[])((Game[])theGames.toArray(new Game[1]));
-   }
+        return (Game[]) theGames.toArray(new Game[1]);
+    }
 
-   public void showBestTeam(Team[] theTeams) {
-      Team currBestTeam = theTeams[0];
-      System.out.println("\nTeam Points");
-      Team[] arr$ = theTeams;
-      int len$ = theTeams.length;
+    public void showBestTeam(Team[] theTeams) {
+        Team currBestTeam = theTeams[0];
+        System.out.println("\nTeam Points");
 
-      for(int i$ = 0; i$ < len$; ++i$) {
-         Team currTeam = arr$[i$];
-         System.out.println(currTeam.getTeamName() + " : " + currTeam.getPointsTotal() + " : " + currTeam.getGoalsTotal());
-         currBestTeam = currTeam.getPointsTotal() > currBestTeam.getPointsTotal() ? currTeam : currBestTeam;
-         if (currTeam.getPointsTotal() > currBestTeam.getPointsTotal()) {
-            currBestTeam = currTeam;
-         } else if (currTeam.getPointsTotal() == currBestTeam.getPointsTotal() && currTeam.getGoalsTotal() > currBestTeam.getGoalsTotal()) {
-            currBestTeam = currTeam;
-         }
-      }
+        for (Team currTeam : theTeams) {
+            System.out.println(currTeam.getTeamName() + " : " + currTeam.getPointsTotal() + " : "
+                    + currTeam.getGoalsTotal());
+            currBestTeam = currTeam.getPointsTotal() > currBestTeam.getPointsTotal() ? currTeam : currBestTeam;
+            if (currTeam.getPointsTotal() > currBestTeam.getPointsTotal()) {
+                currBestTeam = currTeam;
+            } else if (currTeam.getPointsTotal() == currBestTeam.getPointsTotal()) {
+                if (currTeam.getGoalsTotal() > currBestTeam.getGoalsTotal()) {
+                    currBestTeam = currTeam;
+                }
+            }
+        }
 
-      System.out.println("Winner of the League is " + currBestTeam.getTeamName());
-   }
+        System.out.println("Winner of the League is " + currBestTeam.getTeamName());
+
+    }
+
 }

@@ -8,7 +8,7 @@ package soccer;
 
 /**
  *
- * @author ksomervi
+ * @author Lihle
  */
 public abstract class GameEvent {
     
